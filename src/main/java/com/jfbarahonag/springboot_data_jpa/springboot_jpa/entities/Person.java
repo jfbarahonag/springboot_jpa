@@ -70,4 +70,10 @@ public class Person {
     this.programmingLanguage = programmingLanguage;
   }
 
+  @Override
+  public String toString() {
+    return "[id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", programmingLanguage="
+        + programmingLanguage + "]";
+  }
+
 }
