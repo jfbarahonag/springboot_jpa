@@ -13,4 +13,10 @@ public interface PersonRepository extends CrudRepository<Person /* Entity */, Lo
   List<Person> findByProgrammingLanguage(String programmingLanguage);
   
   List<Person> findByProgrammingLanguageStartingWith(String pattern);
+
+  @Query("select p.firstname, p.programmingLanguage from Person p")
+  List<Object[]> getPersonsData();
+  
+  @Query("select p.firstname, p.programmingLanguage from Person p where p.firstname = ?1")
+  List<Object[]> getPersonsData(String firstname);
 }
